@@ -1,0 +1,22 @@
+:root { --yellow: #f8c934; --gray: #e3e5e6; --ink: #1d1d1b; --white: #fffdf7; }
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body { margin: 0; min-height: 100vh; color: var(--ink); font-family: Arial, Helvetica, sans-serif; background: linear-gradient(174deg, var(--yellow) 0 48%, var(--gray) 48.2% 100%); }
+.catalog, .page { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0; }
+.hero { max-width: 660px; }
+.eyebrow { margin: 0 0 12px; font-size: .8rem; font-weight: 700; letter-spacing: .12em; }
+h1 { margin: 0; font-size: clamp(2.2rem, 6vw, 4.5rem); line-height: .98; }
+.hero > p:last-child { max-width: 450px; font-size: 1.05rem; line-height: 1.5; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 64px; }
+.card, .back { display: flex; align-items: center; justify-content: center; min-height: 112px; padding: 20px; border: 2px solid var(--ink); border-radius: 6px; background: var(--white); color: var(--ink); font-weight: 700; text-align: center; text-decoration: none; transition: transform .18s ease, background .18s ease; }
+.card:hover, .card:focus-visible { background: var(--yellow); transform: translateY(-4px); }
+.page { display: grid; place-items: center; min-height: 100vh; padding: 40px 0; }
+.product { width: min(720px, 100%); text-align: center; }
+.product h1 { margin: 0 0 20px; font-size: clamp(2rem, 5vw, 3.5rem); }
+.telegram { display: inline-block; margin-bottom: 24px; color: var(--ink); font-weight: 700; line-height: 1.45; text-underline-offset: 4px; }
+.product-image { display: block; width: 100%; max-height: 65vh; object-fit: contain; border: 2px solid var(--ink); border-radius: 6px; background: var(--white); }
+.back { width: fit-content; min-height: auto; margin: 28px auto 0; }
+.loader { position: fixed; z-index: 10; inset: 0; display: grid; place-items: center; background: var(--yellow); opacity: 1; transition: opacity .3s ease; }
+.loader img { width: min(160px, 45vw); max-height: 160px; object-fit: contain; border-radius: 8px; }
+.loader--hidden { opacity: 0; pointer-events: none; }
+@media (max-width: 640px) { .catalog { padding-top: 52px; } .cards { grid-template-columns: 1fr; margin-top: 42px; } body { background: linear-gradient(174deg, var(--yellow) 0 38%, var(--gray) 38.2% 100%); } }
